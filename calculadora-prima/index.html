@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de prima de diciembre 2026 en Colombia · gratis</title>
+<meta name="description" content="Calcula gratis tu prima de diciembre 2026, tus cesantías y los intereses de cesantías en Colombia con tu salario y tu fecha de ingreso. Valores 2026: mínimo $1.750.905 y auxilio $249.095.">
+<link rel="canonical" href="https://elkina1.github.io/libre-de-deudas-co/calculadora-prima/">
+<meta property="og:title" content="Calculadora de prima de diciembre 2026 (Colombia)">
+<meta property="og:description" content="Escribe tu salario y tu fecha de ingreso y mira cuánto te deben de prima, cesantías e intereses.">
+<meta property="og:image" content="https://elkina1.github.io/libre-de-deudas-co/banners/mi-nomina-336x280.png">
+<style>
+  :root { --verde:#0f5132; --verde2:#198754; --claro:#e8f5ee; --oro:#f59e0b; --tinta:#111827; --gris:#4b5563; --borde:#d1d5db; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--tinta); background:#fff; line-height:1.55; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 16px; }
+  header { background:var(--verde); color:#fff; padding:36px 0 28px; }
+  h1 { font-size:clamp(1.6rem,4.5vw,2.3rem); line-height:1.15; margin:0 0 8px; }
+  header p { color:#d1fae5; margin:0; }
+  section { padding:28px 0; }
+  h2 { color:var(--verde); font-size:1.35rem; margin:0 0 12px; }
+  .card { border:1px solid var(--borde); border-radius:14px; padding:20px; }
+  label { display:block; font-weight:600; margin:14px 0 6px; }
+  input, select { width:100%; font-size:1.05rem; padding:12px; border:1px solid var(--borde); border-radius:10px; background:#fff; color:var(--tinta); }
+  .fila { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:520px) { .fila { grid-template-columns:1fr; } }
+  .ayuda { font-size:.85rem; color:var(--gris); margin-top:4px; }
+  .res { margin-top:20px; background:var(--claro); border-radius:12px; padding:18px; display:none; }
+  .res.on { display:block; }
+  .grande { font-size:2rem; font-weight:800; color:var(--verde); }
+  table { width:100%; border-collapse:collapse; margin-top:10px; }
+  td { padding:8px 0; border-bottom:1px solid #cfe9db; }
+  td:last-child { text-align:right; font-weight:700; }
+  .btn { display:inline-block; background:var(--oro); color:var(--verde); font-weight:800; text-decoration:none; padding:14px 22px; border-radius:10px; font-size:1.05rem; border:0; cursor:pointer; }
+  .cta { margin-top:18px; border:2px solid var(--oro); border-radius:12px; padding:16px; background:#fffbeb; }
+  .nota { font-size:.88rem; color:var(--gris); }
+  details { border-bottom:1px solid #e5e7eb; padding:10px 0; }
+  summary { font-weight:600; cursor:pointer; }
+  footer { padding:24px 0; font-size:.85rem; color:var(--gris); border-top:1px solid #e5e7eb; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Calculadora de prima de diciembre 2026</h1>
+    <p>Gratis y para Colombia. Escribe tu salario y tu fecha de ingreso, y mira cuánto te deben de prima, cesantías e intereses de cesantías.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="card">
+      <label for="salario">Salario mensual (sin horas extra)</label>
+      <input id="salario" inputmode="numeric" placeholder="1.750.905" value="1.750.905">
+      <div class="ayuda">Si ganas hasta 2 salarios mínimos ($3.501.810) se suma el auxilio de transporte de $249.095.</div>
+
+      <div class="fila">
+        <div>
+          <label for="ingreso">Fecha de ingreso a la empresa</label>
+          <input id="ingreso" type="date" value="2025-01-01">
+        </div>
+        <div>
+          <label for="corte">Fecha de corte</label>
+          <input id="corte" type="date" value="2026-12-30">
+          <div class="ayuda">Para la prima de diciembre déjala en 30 de diciembre.</div>
+        </div>
+      </div>
+
+      <label for="aux">¿Recibes auxilio de transporte?</label>
+      <select id="aux">
+        <option value="auto">Calcularlo según mi salario</option>
+        <option value="si">Sí</option>
+        <option value="no">No (por ejemplo, trabajo remoto o la empresa me da transporte)</option>
+      </select>
+
+      <p style="margin-top:18px"><button class="btn" id="calc">Calcular</button></p>
+
+      <div class="res" id="res" aria-live="polite">
+        <div>Tu prima de diciembre 2026:</div>
+        <div class="grande" id="prima">$0</div>
+        <table>
+          <tr><td>Días trabajados en el semestre (jul-dic)</td><td id="dsem">0</td></tr>
+          <tr><td>Base (salario + auxilio)</td><td id="base">$0</td></tr>
+          <tr><td>Cesantías acumuladas en 2026</td><td id="ces">$0</td></tr>
+          <tr><td>Intereses de cesantías (12 % anual)</td><td id="int">$0</td></tr>
+        </table>
+        <p class="nota">La prima se paga a más tardar el 20 de diciembre. Los intereses de cesantías te los pagan directamente a ti a más tardar el 31 de enero, y las cesantías se consignan al fondo a más tardar el 14 de febrero.</p>
+        <div class="cta">
+          <strong>¿Te pagaron menos? ¿Te descuentan bien en la colilla?</strong>
+          <p style="margin:6px 0 12px">Mi Nómina CO es una plantilla de Excel con los valores de 2026 que revisa tu colilla línea por línea y calcula prima, cesantías, vacaciones y la liquidación completa si te retiras.</p>
+          <a class="btn" href="https://amadorelkinaugusto.hotmart.host/mi-nomina-co-te-estan-pagando-bien-colilla-prima-cesantias-y-liquidacion-2026-58038fcd-e3b0-416b-b1e4-6ac78d27721c">Ver Mi Nómina CO · $19.900</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Cómo se calcula</h2>
+    <p><strong>Prima</strong> = (salario + auxilio de transporte) × días trabajados en el semestre ÷ 360. Con el mínimo de 2026 y el semestre completo: $2.000.000 × 180 ÷ 360 = <strong>$1.000.000</strong>.</p>
+    <p><strong>Cesantías</strong> = (salario + auxilio) × días trabajados en el año ÷ 360. <strong>Intereses de cesantías</strong> = cesantías × 12 % × días ÷ 360.</p>
+    <p class="nota">Los días se cuentan con meses de 30 días, como se hace en nómina en Colombia. Si tu salario cambió durante el semestre, la base es el promedio de lo que ganaste.</p>
+  </div>
+</section>
+
+<section style="background:var(--claro)">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Las empleadas domésticas tienen derecho a prima?</summary><p>Sí. Desde 2016, las trabajadoras y los trabajadores del servicio doméstico tienen derecho a prima de servicios, y se calcula igual.</p></details>
+    <details><summary>¿Si entré en septiembre me pagan prima?</summary><p>Sí, es proporcional. Si entraste el 1 de septiembre de 2026 con el mínimo, son 120 días: $2.000.000 × 120 ÷ 360 = $666.667.</p></details>
+    <details><summary>¿La prima tiene descuentos de salud y pensión?</summary><p>No. A la prima no se le descuentan aportes a salud ni pensión. Si ganas mucho, puede tener retención en la fuente.</p></details>
+    <details><summary>¿Qué pasa si no me pagan la prima a tiempo?</summary><p>Puedes reclamar a tu empleador por escrito y, si no responde, acudir al Ministerio del Trabajo. Pregunta antes cuál es la fecha de pago en tu empresa.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Herramienta educativa de cálculo con valores de 2026 (Decretos 1469 y 1470 de 2025: salario mínimo $1.750.905 y auxilio de transporte $249.095). No es asesoría laboral; verifica tu caso con tu empleador. No guardamos lo que escribes: el cálculo se hace en tu navegador.<br>
+    © 2026 Elkin Augusto Amador · <a href="../">Libre de Deudas CO</a>
+  </div>
+</footer>
+
+<script>
+const SMMLV = 1750905, AUX = 249095;
+const $ = id => document.getElementById(id);
+const pesos = n => "$" + Math.round(n).toLocaleString("es-CO");
+const num = s => Number(String(s).replace(/[^\d]/g, "")) || 0;
+// Días con meses de 30 días (calendario comercial), incluyendo ambos extremos
+function dias360(a, b) {
+  if (b < a) return 0;
+  const d1 = Math.min(a.getUTCDate(), 30), d2 = Math.min(b.getUTCDate(), 30);
+  return (b.getUTCFullYear() - a.getUTCFullYear()) * 360 + (b.getUTCMonth() - a.getUTCMonth()) * 30 + (d2 - d1) + 1;
+}
+function fecha(v) { const [y, m, d] = v.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); }
+function calcular() {
+  const sal = num($("salario").value);
+  if (!sal || !$("ingreso").value || !$("corte").value) return;
+  const ing = fecha($("ingreso").value), corte = fecha($("corte").value);
+  const modo = $("aux").value;
+  const aux = modo === "si" || (modo === "auto" && sal <= 2 * SMMLV) ? AUX : 0;
+  const base = sal + aux;
+  const y = corte.getUTCFullYear();
+  const iniSem = new Date(Date.UTC(y, corte.getUTCMonth() >= 6 ? 6 : 0, 1));
+  const iniAno = new Date(Date.UTC(y, 0, 1));
+  const dSem = Math.min(180, dias360(ing > iniSem ? ing : iniSem, corte));
+  const dAno = Math.min(360, dias360(ing > iniAno ? ing : iniAno, corte));
+  const prima = base * dSem / 360, ces = base * dAno / 360, intr = ces * 0.12 * dAno / 360;
+  $("prima").textContent = pesos(prima);
+  $("dsem").textContent = dSem;
+  $("base").textContent = pesos(base);
+  $("ces").textContent = pesos(ces);
+  $("int").textContent = pesos(intr);
+  $("res").classList.add("on");
+}
+$("calc").addEventListener("click", calcular);
+$("salario").addEventListener("blur", e => { const n = num(e.target.value); if (n) e.target.value = n.toLocaleString("es-CO"); });
+</script>
+</body>
+</html>
