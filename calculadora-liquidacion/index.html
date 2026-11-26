@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de liquidación laboral 2026 en Colombia · gratis</title>
+<meta name="description" content="Calcula gratis tu liquidación por renuncia o despido en Colombia con valores 2026: cesantías, intereses, prima, vacaciones e indemnización por despido sin justa causa.">
+<link rel="canonical" href="https://elkina1.github.io/libre-de-deudas-co/calculadora-liquidacion/">
+<meta property="og:title" content="Calculadora de liquidación laboral 2026 (Colombia)">
+<meta property="og:description" content="Mira cuánto te deben al salir de tu trabajo: cesantías, intereses, prima, vacaciones e indemnización.">
+<meta property="og:image" content="https://elkina1.github.io/libre-de-deudas-co/banners/mi-nomina-336x280.png">
+<style>
+  :root { --verde:#0f5132; --claro:#e8f5ee; --oro:#f59e0b; --tinta:#111827; --gris:#4b5563; --borde:#d1d5db; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--tinta); background:#fff; line-height:1.55; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 16px; }
+  header { background:var(--verde); color:#fff; padding:36px 0 28px; }
+  h1 { font-size:clamp(1.6rem,4.5vw,2.3rem); line-height:1.15; margin:0 0 8px; }
+  header p { color:#d1fae5; margin:0; }
+  section { padding:28px 0; }
+  h2 { color:var(--verde); font-size:1.35rem; margin:0 0 12px; }
+  .card { border:1px solid var(--borde); border-radius:14px; padding:20px; }
+  label { display:block; font-weight:600; margin:14px 0 6px; }
+  input, select { width:100%; font-size:1.05rem; padding:12px; border:1px solid var(--borde); border-radius:10px; background:#fff; color:var(--tinta); }
+  .fila { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:520px) { .fila { grid-template-columns:1fr; } }
+  .ayuda { font-size:.85rem; color:var(--gris); margin-top:4px; }
+  .res { margin-top:20px; background:var(--claro); border-radius:12px; padding:18px; display:none; }
+  .res.on { display:block; }
+  .grande { font-size:2rem; font-weight:800; color:var(--verde); }
+  table { width:100%; border-collapse:collapse; margin-top:10px; }
+  td { padding:8px 0; border-bottom:1px solid #cfe9db; }
+  td:last-child { text-align:right; font-weight:700; }
+  .btn { display:inline-block; background:var(--oro); color:var(--verde); font-weight:800; text-decoration:none; padding:14px 22px; border-radius:10px; font-size:1.05rem; border:0; cursor:pointer; }
+  .cta { margin-top:18px; border:2px solid var(--oro); border-radius:12px; padding:16px; background:#fffbeb; }
+  .nota { font-size:.88rem; color:var(--gris); }
+  details { border-bottom:1px solid #e5e7eb; padding:10px 0; }
+  summary { font-weight:600; cursor:pointer; }
+  footer { padding:24px 0; font-size:.85rem; color:var(--gris); border-top:1px solid #e5e7eb; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Calculadora de liquidación laboral 2026</h1>
+    <p>Gratis y para Colombia. Mira cuánto te deben al salir de tu trabajo, por renuncia o por despido.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="card">
+      <label for="salario">Último salario mensual</label>
+      <input id="salario" inputmode="numeric" value="1.750.905">
+      <div class="ayuda">Si ganas hasta 2 salarios mínimos ($3.501.810) se suma el auxilio de transporte ($249.095) para cesantías y prima.</div>
+      <div class="fila">
+        <div><label for="ingreso">Fecha de ingreso</label><input id="ingreso" type="date" value="2024-03-01"></div>
+        <div><label for="retiro">Fecha de retiro</label><input id="retiro" type="date" value="2026-11-30"></div>
+      </div>
+      <div class="fila">
+        <div>
+          <label for="motivo">Motivo de salida</label>
+          <select id="motivo">
+            <option value="renuncia">Renuncia</option>
+            <option value="justa">Despido con justa causa</option>
+            <option value="sin">Despido sin justa causa (contrato indefinido)</option>
+          </select>
+        </div>
+        <div>
+          <label for="vac">Días de vacaciones pendientes</label>
+          <input id="vac" inputmode="decimal" value="">
+          <div class="ayuda">Déjalo vacío si nunca saliste a vacaciones: se calcula con todo el tiempo trabajado.</div>
+        </div>
+      </div>
+      <div class="fila">
+        <div>
+          <label for="cesp">¿Ya te consignaron las cesantías de años anteriores?</label>
+          <select id="cesp"><option value="si">Sí, solo me deben las de este año</option><option value="no">No, me deben todas</option></select>
+        </div>
+        <div>
+          <label for="prp">¿Te pagaron la prima de junio de este año?</label>
+          <select id="prp"><option value="si">Sí</option><option value="no">No</option></select>
+        </div>
+      </div>
+      <p style="margin-top:18px"><button class="btn" id="calc">Calcular</button></p>
+
+      <div class="res" id="res" aria-live="polite">
+        <div>Total aproximado de tu liquidación:</div>
+        <div class="grande" id="total">$0</div>
+        <table id="tabla"></table>
+        <p class="nota" id="aviso"></p>
+        <div class="cta">
+          <strong>¿Quieres revisarla línea por línea antes de firmar?</strong>
+          <p style="margin:6px 0 12px">Mi Nómina CO es una plantilla de Excel con los valores de 2026 para revisar la liquidación, la colilla, la prima y las cesantías con tus fechas exactas.</p>
+          <a class="btn" href="https://amadorelkinaugusto.hotmart.host/mi-nomina-co-te-estan-pagando-bien-colilla-prima-cesantias-y-liquidacion-2026-58038fcd-e3b0-416b-b1e4-6ac78d27721c">Ver Mi Nómina CO · $19.900</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Cómo se calcula</h2>
+    <p><strong>Cesantías</strong> = (salario + auxilio) × días ÷ 360. <strong>Intereses</strong> = cesantías × 12 % × días ÷ 360. <strong>Prima</strong> = (salario + auxilio) × días del semestre ÷ 360. <strong>Vacaciones</strong> = salario (sin auxilio) × días trabajados ÷ 720, es decir, 15 días hábiles por año.</p>
+    <p><strong>Indemnización por despido sin justa causa</strong> (contrato a término indefinido, artículo 64 del Código Sustantivo del Trabajo): si ganas menos de 10 salarios mínimos, 30 días de salario por el primer año y 20 días por cada año siguiente, proporcional a la fracción. Si ganas 10 o más, 20 días por el primer año y 15 por cada año siguiente.</p>
+    <p class="nota">Los días se cuentan con meses de 30 días. No incluye contratos a término fijo u obra, salario integral, horas extra, comisiones ni descuentos autorizados.</p>
+  </div>
+</section>
+
+<section style="background:var(--claro)">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Si renuncio me pagan liquidación?</summary><p>Sí. Al renunciar te deben pagar cesantías, intereses, prima proporcional y vacaciones pendientes. Lo único que no recibes es la indemnización por despido.</p></details>
+    <details><summary>¿Cuánto tiempo tiene la empresa para pagarme?</summary><p>Debe pagarte al terminar el contrato. Si se demora sin razón, puede tener que pagarte un día de salario por cada día de retraso (artículo 65 del Código Sustantivo del Trabajo).</p></details>
+    <details><summary>¿Me descuentan salud y pensión de la liquidación?</summary><p>De las cesantías, los intereses y la prima, no. De las vacaciones pagadas en dinero, en general tampoco; revisa tu caso con la empresa.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Herramienta educativa de cálculo con valores de 2026 (salario mínimo $1.750.905 y auxilio de transporte $249.095). No es asesoría laboral ni jurídica; antes de firmar, verifica tu caso con tu empleador, el Ministerio del Trabajo o un abogado laboral. El cálculo se hace en tu navegador y no guardamos lo que escribes.<br>
+    © 2026 Elkin Augusto Amador · <a href="../calculadora-prima/">Calculadora de prima</a> · <a href="../">Libre de Deudas CO</a>
+  </div>
+</footer>
+
+<script>
+const SMMLV = 1750905, AUX = 249095;
+const $ = id => document.getElementById(id);
+const pesos = n => "$" + Math.round(n).toLocaleString("es-CO");
+const num = s => Number(String(s).replace(/[^\d.,]/g, "").replace(/\./g, "").replace(",", ".")) || 0;
+function dias360(a, b) {
+  if (b < a) return 0;
+  const d1 = Math.min(a.getUTCDate(), 30), d2 = Math.min(b.getUTCDate(), 30);
+  return (b.getUTCFullYear() - a.getUTCFullYear()) * 360 + (b.getUTCMonth() - a.getUTCMonth()) * 30 + (d2 - d1) + 1;
+}
+const fecha = v => { const [y, m, d] = v.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); };
+const mayor = (a, b) => (a > b ? a : b);
+function calcular() {
+  const sal = num($("salario").value);
+  if (!sal || !$("ingreso").value || !$("retiro").value) return;
+  const ing = fecha($("ingreso").value), ret = fecha($("retiro").value);
+  if (ret < ing) return;
+  const aux = sal <= 2 * SMMLV ? AUX : 0, base = sal + aux;
+  const y = ret.getUTCFullYear();
+  const total = dias360(ing, ret);
+  const dCes = $("cesp").value === "si" ? dias360(mayor(ing, new Date(Date.UTC(y, 0, 1))), ret) : total;
+  const iniSem = $("prp").value === "si" && ret.getUTCMonth() >= 6 ? new Date(Date.UTC(y, 6, 1)) : new Date(Date.UTC(y, 0, 1));
+  const dPrima = dias360(mayor(ing, iniSem), ret);
+  const vacTxt = $("vac").value.trim();
+  const dVacHab = vacTxt === "" ? total * 15 / 360 : num(vacTxt);
+  const ces = base * dCes / 360;
+  const intr = ces * 0.12 * Math.min(dCes, 360) / 360;
+  const prima = base * dPrima / 360;
+  const vac = sal / 30 * dVacHab;
+  let indem = 0;
+  if ($("motivo").value === "sin") {
+    const diario = sal / 30, anos = total / 360;
+    const [d1, dN] = sal < 10 * SMMLV ? [30, 20] : [20, 15];
+    indem = diario * (d1 + Math.max(0, anos - 1) * dN);
+  }
+  const filas = [
+    ["Días trabajados en total", total, false],
+    ["Cesantías (" + dCes + " días)", ces, true],
+    ["Intereses de cesantías", intr, true],
+    ["Prima proporcional (" + dPrima + " días)", prima, true],
+    ["Vacaciones (" + dVacHab.toFixed(1).replace(".", ",") + " días hábiles)", vac, true],
+  ];
+  if (indem) filas.push(["Indemnización por despido sin justa causa", indem, true]);
+  $("tabla").innerHTML = filas.map(([t, v, p]) => "<tr><td>" + t + "</td><td>" + (p ? pesos(v) : v) + "</td></tr>").join("");
+  $("total").textContent = pesos(ces + intr + prima + vac + indem);
+  $("aviso").textContent = dPrima > 180 ? "Ojo: la prima suma más de un semestre porque marcaste que no te pagaron la de junio." : "Valor aproximado antes de retención en la fuente. Si la empresa ya te pagó algo de esto, réstalo.";
+  $("res").classList.add("on");
+}
+$("calc").addEventListener("click", calcular);
+$("salario").addEventListener("blur", e => { const n = num(e.target.value); if (n) e.target.value = n.toLocaleString("es-CO"); });
+</script>
+</body>
+</html>
